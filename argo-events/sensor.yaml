@@ -26,15 +26,15 @@ spec:
             generateName: payload-
             labels:
               app: payload
-            spec:
-              containers:
-              - name: hello
-                image: alpine
-                command: ["echo"]
-                args: ["This is the message you sent me: \n", ""]
-              restartPolicy: Never
-        parameters:
-          - src:
-            dependencyName: payload
-            dataKey: body.message
-          dest: spec.containers.0.args.1
+          spec:
+            containers:
+            - name: hello
+              image: alpine
+              command: ["echo"]
+              args: ["This is the message you sent me: \n", ""]
+            restartPolicy: Never
+      parameters:
+        - src:
+          dependencyName: payload
+          dataKey: body.message
+        dest: spec.containers.0.args.1
