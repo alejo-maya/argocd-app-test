@@ -18,7 +18,7 @@ spec:
         ports:
         - containerPort: 8083
         env:
-        - name: ENV_TEST
+        - name: ENV_TEST_SS
           valueFrom:
             secretKeyRef:
               name: node-envs-secret
